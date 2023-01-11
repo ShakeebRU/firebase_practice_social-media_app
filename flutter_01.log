@@ -1,0 +1,96 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter run --machine --start-paused -d emulator-5554 --devtools-server-address http://127.0.0.1:9102/ --target lib/main.dart
+
+## exception
+
+PathNotFoundException: PathNotFoundException: Deletion failed, path = '/home/memee/Desktop/flutter work/facebookclone/socialmediaapp/linux/flutter/ephemeral/.plugin_symlinks' (OS Error: No such file or directory, errno = 2)
+
+```
+#0      _Directory._deleteSync (dart:io/directory_impl.dart:193:7)
+#1      FileSystemEntity.deleteSync (dart:io/file_system_entity.dart:424:7)
+#2      ForwardingFileSystemEntity.deleteSync (package:file/src/forwarding/forwarding_file_system_entity.dart:70:16)
+#3      ErrorHandlingDirectory.deleteSync.<anonymous closure> (package:flutter_tools/src/base/error_handling_io.dart:487:22)
+#4      _runSync (package:flutter_tools/src/base/error_handling_io.dart:600:14)
+#5      ErrorHandlingDirectory.deleteSync (package:flutter_tools/src/base/error_handling_io.dart:486:12)
+#6      _createPlatformPluginSymlinks (package:flutter_tools/src/flutter_plugins.dart:1043:22)
+#7      createPluginSymlinks (package:flutter_tools/src/flutter_plugins.dart:994:5)
+#8      refreshPluginsList (package:flutter_tools/src/flutter_plugins.dart:1089:5)
+<asynchronous suspension>
+#9      FlutterProject.ensureReadyForPlatformSpecificTooling (package:flutter_tools/src/project.dart:357:5)
+<asynchronous suspension>
+#10     FlutterCommand.verifyThenRunCommand (package:flutter_tools/src/runner/flutter_command.dart:1430:7)
+<asynchronous suspension>
+#11     FlutterCommand.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command.dart:1275:27)
+<asynchronous suspension>
+#12     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:150:19)
+<asynchronous suspension>
+#13     CommandRunner.runCommand (package:args/command_runner.dart:209:13)
+<asynchronous suspension>
+#14     FlutterCommandRunner.runCommand.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:290:9)
+<asynchronous suspension>
+#15     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:150:19)
+<asynchronous suspension>
+#16     FlutterCommandRunner.runCommand (package:flutter_tools/src/runner/flutter_command_runner.dart:236:5)
+<asynchronous suspension>
+#17     run.<anonymous closure>.<anonymous closure> (package:flutter_tools/runner.dart:64:9)
+<asynchronous suspension>
+#18     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:150:19)
+<asynchronous suspension>
+#19     main (package:flutter_tools/executable.dart:91:3)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[!] Flutter (Channel master, 3.7.0-13.0.pre.70, on Kali GNU/Linux Rolling 5.14.0-kali4-amd64, locale en_US.UTF-8)
+    • Flutter version 3.7.0-13.0.pre.70 on channel master at /home/memee/flutter
+    ! The flutter binary is not on your path. Consider adding /home/memee/flutter/bin to your path.
+    ! The dart binary is not on your path. Consider adding /home/memee/flutter/bin to your path.
+    • Upstream repository https://github.com/flutter/flutter.git
+    • Framework revision a09faa11bd (7 days ago), 2022-12-26 07:38:25 -0500
+    • Engine revision da181dfbfb
+    • Dart version 3.0.0 (build 3.0.0-63.0.dev)
+    • DevTools version 2.20.0
+    • If those were intentional, you can disregard the above warnings; however it is recommended to use "git" directly to perform update checks and upgrades.
+
+[✓] Android toolchain - develop for Android devices (Android SDK version 33.0.1)
+    • Android SDK at /home/memee/Android/Sdk
+    • Platform android-33, build-tools 33.0.1
+    • Java binary at: /home/memee/android-studio/jre/bin/java
+    • Java version openjdk version "11.0.13" 2021-10-19
+    • All Android licenses accepted.
+
+[✓] Chrome - develop for the web
+    • Chrome at google-chrome
+
+[✓] Linux toolchain - develop for Linux desktop
+    • Debian clang version 11.1.0-4
+    • cmake version 3.23.3
+    • ninja version 1.11.0
+    • pkg-config version 0.29.2
+
+[✓] Android Studio (version 2021.3)
+    • Android Studio at /home/memee/android-studio
+    • Flutter plugin version 71.2.3
+    • Dart plugin version 213.7433
+    • Java version openjdk version "11.0.13" 2021-10-19
+
+[✓] VS Code (version 1.74.2)
+    • VS Code at /usr/share/code
+    • Flutter extension version 3.56.0
+
+[✓] Connected device (3 available)
+    • Android SDK built for x86 (mobile) • emulator-5554 • android-x86    • Android 10 (API 29) (emulator)
+    • Linux (desktop)                    • linux         • linux-x64      • Kali GNU/Linux Rolling 5.14.0-kali4-amd64
+    • Chrome (web)                       • chrome        • web-javascript • Google Chrome 108.0.5359.124
+
+[✓] HTTP Host Availability
+    • All required HTTP hosts are available
+
+! Doctor found issues in 1 category.
+```
